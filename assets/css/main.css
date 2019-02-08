@@ -1,1 +1,23 @@
+/* Note: All our custom css classes begin with "t-" */
+body { 
+    background-color: #EEE;
+    padding-top: 65px;
+}
 
+.t-body {
+    background-color: #FFF;
+    height: 100%;
+}
+
+.t-footer {
+    background-color: #CBCBCB;
+    padding: 1em 10em 0 10em;
+}
+
+.t-logo { color: #A03B93; }
+.t-brand { color: #4F0B34; }
+.t-btn-send { background-color: #FFCA9D; }
+
+
+/* Customize Boostrap */
+.navbar-custom { background-color: #FFCA9D; }
