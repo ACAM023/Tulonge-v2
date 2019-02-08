@@ -57,6 +57,7 @@ function processLocalMessage(){
 /* Checks if other users have sent any messages */
 function askForRemoteMessages (){
     // TODO
+    console.log("TODO: Implement askForRemoteMessages() function")
 }
 
 /* Processes messages sent by other users */
