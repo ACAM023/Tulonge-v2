@@ -1,0 +1,40 @@
+/* Note: All our custom css classes begin with "t-" */
+body { 
+    background-color: #EEE;
+    padding-top: 45px;
+}
+
+.t-body {
+    background-color: #FFF;
+    margin-bottom: 3.5em;
+}
+
+.t-msg-right, .t-msg-left {
+    border: 1px solid #DDD;
+    border-radius: .5em;
+    margin: 1em;
+    padding: .7em .7em 0 .7em;
+    width: 35em;
+}
+
+.t-msg-right {
+    background-color: #F1F4C1;
+}
+
+.t-msg-left {
+    background-color: #EEE;
+}
+
+.t-footer {
+    background-color: #CBCBCB;
+    padding: 1em 10em 0 10em;
+}
+
+.t-logo { color: #A03B93; }
+.t-brand { color: #4F0B34; }
+.t-btn-send { background-color: #FFCA9D; }
+
+.onared { border: 1px solid red;}
+
+/* Customize Boostrap */
+.navbar-custom { background-color: #FFCA9D; }
