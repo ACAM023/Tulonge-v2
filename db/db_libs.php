@@ -1,7 +1,7 @@
 <?PHP
+
 /**
- *	@author 	Francis Sowani (Frathoso) <frathoso@gmail.com>
- *	@author 	Alvin Mrema <sonalpha023@gmail.com>
+ *	@author 	[First] [Last] <[email]>
  *	@version	1.0
  */
 
