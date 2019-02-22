@@ -3,6 +3,8 @@
 
 /*  Capture user events  */
 $(document).ready(function(){
+    processRemoteMessage();  // Load chat history
+    
 	/* Send button is clicked */
 	$('#btn-send').click(function(event){
 		event.preventDefault();
@@ -22,7 +24,8 @@ $(document).ready(function(){
     
     /* Check regularly if a remote message is available */
     setInterval(function () {
-        askForRemoteMessages();
+        //processRemoteMessage();
+        console.log("Working");
     }, 3 * 1000);   // Duration in miliseconds
 });
 
@@ -57,10 +60,46 @@ function processLocalMessage(){
 /* Checks if other users have sent any messages */
 function askForRemoteMessages (){
     // TODO
-    console.log("TODO: Implement askForRemoteMessages() function")
+    console.log("TODO: Implement askForRemoteMessages() function");
 }
 
 /* Processes messages sent by other users */
 function processRemoteMessage(){
-    // TODO
+	var limit = 20;
+
+	/* Submit a request  */
+	$.ajax({
+		type: 'GET',
+		url: 'http://tulonge.alvinlabs.pro/load-last-messages.php?limit=' + limit,
+		success: handleRemoteSuccess,
+		error: handleRemoteError
+	});
+}
+
+function handleRemoteSuccess(resp){
+    var responseObj = $.parseJSON(resp);
+
+    if(responseObj.status == 'success'){
+        var messages = responseObj.messages;
+        var user = "Anonymous";
+        var size = messages.length;
+        var i;
+        console.log("Appending");
+		for(i=1; i<=size; i++){
+            $('#cont-msg').append(
+                '<div class="w-100">' +
+                    '<div class="float-left text-wrap shadow-sm t-msg-left">' +
+                        '<h6><b>' + user + ':</b></h6>' +
+                        '<p>' + messages[i].message + '</p>' +
+                    '</div>' +
+                '</div>'
+            );
+        }
+    }else{
+        console.log("Cannot fetch chat history");
+    }
+}
+
+function handleRemoteError(resp){
+    console.log("Something really bad happened");
 }
