@@ -4,7 +4,7 @@
 /*  Capture user events  */
 $(document).ready(function(){
     processRemoteMessage();  // Load chat history
-    
+
 	/* Send button is clicked */
 	$('#btn-send').click(function(event){
 		event.preventDefault();
@@ -85,7 +85,7 @@ function handleRemoteSuccess(resp){
         var size = messages.length;
         var i;
         console.log("Appending");
-		for(i=1; i<=size; i++){
+		for(i=0; i<size; i++){
             $('#cont-msg').append(
                 '<div class="w-100">' +
                     '<div class="float-left text-wrap shadow-sm t-msg-left">' +
