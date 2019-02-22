@@ -36,10 +36,12 @@ try {
 	$isConnected = false;
 }
 
+/*
 if ($isConnected){
 	echo "Database connection successful";
 }else{
 	echo "Database connection failed: ".$error->getMessage()."\n";
 }
+*/
 
 ?>
